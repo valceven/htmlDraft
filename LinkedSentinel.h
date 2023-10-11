@@ -50,6 +50,7 @@ class LinkedSentinel : public Sentinel{
         cout << "3 - removeAt" << endl;
         cout << "4 - removeNum" << endl;
         cout << "5 - retain" << endl;
+        cout << "6 - removeRedundant" << endl;
         cout << "6 - print" << endl;
 
         return;
@@ -125,6 +126,30 @@ class LinkedSentinel : public Sentinel{
             }else{
                 curr = curr->next;
             }
+        }
+        return ctr;
+    }
+
+    int removeRedundant(){
+
+        int ctr = 0;
+
+        node* curr = head->next;
+        
+
+        while(curr->next != tail){
+            node* trav = curr->next;
+        while(trav != tail){
+            if(curr->data == trav->data){
+                node* temp = trav->next;
+                removeNode(trav);
+                trav = temp;
+                ctr++;
+            }else{
+                trav = trav->next;
+            }
+        }
+        curr = curr->next;
         }
         return ctr;
     }

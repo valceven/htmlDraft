@@ -40,6 +40,9 @@ int main(){
            case 5: cout << "Enter a number: ";
                     cin >> num;
                     cout << "Succesfully removed: " << myList->retain(num) << endl;
+                    break;
+           case 6: 
+                        cout << "Succesfully removed: " << myList->removeRedundant() << " elements." << endl;
                     break;                   
             case 7: cout << "Here is your list: ";
                     myList->print();
