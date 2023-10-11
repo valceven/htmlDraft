@@ -18,4 +18,6 @@ class Sentinel{
     virtual int retain(int num) = 0;
     virtual int removeRedundant() = 0;
     virtual int corner(int left,int right) = 0;
+    virtual void sortDList() = 0;
+    virtual void sortAList() = 0;
 };

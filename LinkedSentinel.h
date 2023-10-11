@@ -52,7 +52,9 @@ class LinkedSentinel : public Sentinel{
         cout << "5 - retain" << endl;
         cout << "6 - removeRedundant" << endl;
         cout << "7 - corner" << endl;
-        cout << "8 - print" << endl;
+        cout << "8 - sortList by Descending" << endl;
+        cout << "9 - sortList by Ascending" << endl;
+        cout << "10 - print" << endl;
 
         return;
     }
@@ -180,6 +182,44 @@ class LinkedSentinel : public Sentinel{
                 ctr++;
             }
             return flag;
+    }
+
+    void sortDList(){
+
+        node* curr = head->next;
+
+        while(curr->next != tail){
+           node* trav = curr->next;
+            while(trav != tail){
+                if(trav->data > curr->data){
+                    int temp = trav->data;
+                    trav->data = curr->data;
+                    curr->data = temp;
+                }
+                trav = trav->next;
+            }
+            curr = curr->next;
+        }
+        cout << "Success!" << endl;
+    }
+
+    void sortAList(){
+
+        node* curr = head->next;
+
+        while(curr->next != tail){
+           node* trav = curr->next;
+            while(trav != tail){
+                if(trav->data < curr->data){
+                    int temp = trav->data;
+                    trav->data = curr->data;
+                    curr->data = temp;
+                }
+                trav = trav->next;
+            }
+            curr = curr->next;
+        }
+        cout << "Success!" << endl;
     }
 
 };

@@ -47,7 +47,11 @@ int main(){
                     cin >> right;
                     cout << "Succesfully removed: " << myList->corner(left,right) << " elements." << endl;
                     break;                   
-           case 8:  cout << "Here is your list: ";
+           case 8:  myList->sortDList();
+                    break;
+           case 9:  myList->sortAList();
+                    break;
+           case 10:  cout << "Here is your list: ";
                     myList->print();
                     break;
             default:cout << "Wrong selection. Please try again :)";
