@@ -29,7 +29,7 @@ class LinkedSentinel : public Sentinel{
         free(n);
         pred->next = succ;
         succ->prev = pred;
-
+        size--;
     }
 
     public:
@@ -51,7 +51,8 @@ class LinkedSentinel : public Sentinel{
         cout << "4 - removeNum" << endl;
         cout << "5 - retain" << endl;
         cout << "6 - removeRedundant" << endl;
-        cout << "6 - print" << endl;
+        cout << "7 - corner" << endl;
+        cout << "8 - print" << endl;
 
         return;
     }
@@ -74,6 +75,7 @@ class LinkedSentinel : public Sentinel{
             curr = curr->next;
         }
         cout << endl;
+        cout << "Size is: " << size << endl;
         return;
     }
 
@@ -152,6 +154,32 @@ class LinkedSentinel : public Sentinel{
         curr = curr->next;
         }
         return ctr;
+    }
+
+    int corner(int left,int right){
+
+            int ctr = 0;
+            int flag = 0;
+
+            node* curr = head->next;
+            node* temp = curr;
+
+            while(ctr < left){
+                ctr++;
+                curr = curr->next;
+            }
+
+            temp = curr;
+            right = (size - right);
+
+            while(ctr < right){
+                temp = temp->next;
+                removeNode(curr);
+                curr = temp;
+                flag++;
+                ctr++;
+            }
+            return flag;
     }
 
 };

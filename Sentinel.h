@@ -17,4 +17,5 @@ class Sentinel{
     virtual int removeNum(int num) = 0;
     virtual int retain(int num) = 0;
     virtual int removeRedundant() = 0;
+    virtual int corner(int left,int right) = 0;
 };
