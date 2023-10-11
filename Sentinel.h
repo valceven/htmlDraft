@@ -15,4 +15,5 @@ class Sentinel{
     virtual void print() = 0;
     virtual int removeAt(int pos) = 0;
     virtual int removeNum(int num) = 0;
+    virtual int retain(int num) = 0;
 };

@@ -47,9 +47,10 @@ class LinkedSentinel : public Sentinel{
         cout << "\nHello " << name << " here is the table of choices." << endl;
         cout << "\n1 - addFirst" << endl;
         cout << "2 - addLast" << endl;
-        cout << "3 - print" << endl;
-        cout << "4 - removeAt" << endl;
-        cout << "5 - removeNum" << endl;
+        cout << "3 - removeAt" << endl;
+        cout << "4 - removeNum" << endl;
+        cout << "5 - retain" << endl;
+        cout << "6 - print" << endl;
 
         return;
     }
@@ -107,6 +108,25 @@ class LinkedSentinel : public Sentinel{
         }
         
         return -1;
+    }
+
+    int retain(int num){
+        int ctr = 0;
+
+        node* curr = head->next;
+        node* temp = curr;
+
+        while(curr != tail){
+            if(curr->data < num){
+                temp = curr->next;
+                removeNode(curr);
+                curr = temp;
+                ctr++;
+            }else{
+                curr = curr->next;
+            }
+        }
+        return ctr;
     }
 
 };

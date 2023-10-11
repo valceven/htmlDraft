@@ -36,13 +36,15 @@ int main(){
            case 4: cout << "Enter a number to remove: ";
                     cin >> num;
                     cout << "Succesfully removed: " << myList->removeNum(num) << endl;
-                    break;                  
+                    break;
+           case 5: cout << "Enter a number: ";
+                    cin >> num;
+                    cout << "Succesfully removed: " << myList->retain(num) << endl;
+                    break;                   
             case 7: cout << "Here is your list: ";
                     myList->print();
                     break;
-
-            default:
-                    cout << "Wrong selection. Please try again :)";
+            default:cout << "Wrong selection. Please try again :)";
                     break;
 
         }
